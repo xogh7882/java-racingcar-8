@@ -31,12 +31,6 @@ public class Car {
         System.out.println();
     }
 
-    public void winner(int winStep){
-        if(step == winStep){
-            System.out.print(name+", ");
-        }
-    }
-
     public int getStep() {
         return step;
     }
@@ -45,8 +39,5 @@ public class Car {
         return name;
     }
 
-    public boolean isWinner(int winStep){
-        return this.step == winStep;
-    }
 }
 
