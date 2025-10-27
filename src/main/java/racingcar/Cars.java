@@ -13,12 +13,27 @@ public class Cars {
     }
 
     private List<Car> splitCars(String input){
+        String trimInput = input.replace(",","").trim();
+        if(trimInput.isEmpty()){
+            throw new IllegalArgumentException("Input cannot be empty");
+        }
         List<String> names = List.of(input.split(","));
         List<Car> carList = new ArrayList<>();
         for(String name : names){
+            checkName(name);
             carList.add(new Car(name));
         }
         return carList;
+    }
+
+    private void checkName(String input){
+        String name = input.trim();
+        if(name.isEmpty()){
+            throw new IllegalArgumentException("Name cannot be empty");
+        }
+        if(name.length() > 5){
+            throw new IllegalArgumentException("Name must be at least 5 characters");
+        }
     }
 
     public void race(){

@@ -7,14 +7,7 @@ public class Car {
     private int step = 0;
 
     public Car(String name){
-        checkName(name);
         this.name = name;
-    }
-
-    private void checkName(String name){
-        if(name.isEmpty() || name.length() > 5){
-            throw new IllegalArgumentException("Car name can't longer than 5 characters");
-        }
     }
 
     public void move(Integer number){
