@@ -5,6 +5,10 @@ import java.util.List;
 import camp.nextstep.edu.missionutils.Randoms;
 
 public class Cars {
+    private static final int MAX_NAME_LENGTH = 5;
+    private static final int MIN_RANDOM_NUMBER = 0;
+    private static final int MAX_RANDOM_NUMBER = 9;
+
     private List<Car> cars;
     private int winStep;
 
@@ -31,14 +35,14 @@ public class Cars {
         if(name.isEmpty()){
             throw new IllegalArgumentException("Name cannot be empty");
         }
-        if(name.length() > 5){
-            throw new IllegalArgumentException("Name must be at least 5 characters");
+        if(name.length() > MAX_NAME_LENGTH){
+            throw new IllegalArgumentException("Name must be at most 5 characters");
         }
     }
 
     public void race(OutputContent outputContent){
         for(Car car : cars){
-            car.move(Randoms.pickNumberInRange(0,9));
+            car.move(Randoms.pickNumberInRange(MIN_RANDOM_NUMBER,MAX_RANDOM_NUMBER));
             outputContent.printCarStatus(car);
             winStep = Math.max(winStep, car.getStep());
         }
