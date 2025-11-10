@@ -21,6 +21,6 @@ public class RacingGameController {
             outputContent.printLine();
         }
 
-        cars.printWinner();
+        outputContent.printWinners(cars.getWinner());
     }
 }

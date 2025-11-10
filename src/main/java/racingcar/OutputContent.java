@@ -1,5 +1,7 @@
 package racingcar;
 
+import java.util.List;
+
 public class OutputContent {
     public void printResult() {
         System.out.println();
@@ -12,5 +14,9 @@ public class OutputContent {
 
     public void printCarStatus(Car car){
         System.out.println(car.getStatus());
+    }
+
+    public void printWinners(List<String> winners){
+        System.out.println("최종 우승자 : " + String.join(", ", winners));
     }
 }
