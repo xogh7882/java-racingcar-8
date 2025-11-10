@@ -9,4 +9,8 @@ public class OutputContent {
     public void printLine(){
         System.out.println();
     }
+
+    public void printCarStatus(Car car){
+        System.out.println(car.getStatus());
+    }
 }

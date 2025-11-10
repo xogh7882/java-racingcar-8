@@ -36,10 +36,10 @@ public class Cars {
         }
     }
 
-    public void race(){
+    public void race(OutputContent outputContent){
         for(Car car : cars){
             car.move(Randoms.pickNumberInRange(0,9));
-            car.print();
+            outputContent.printCarStatus(car);
             winStep = Math.max(winStep, car.getStep());
         }
     }

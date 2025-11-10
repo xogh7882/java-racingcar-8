@@ -17,7 +17,7 @@ public class RacingGameController {
 
         outputContent.printResult();
         for (int i = 0; i < racingCount; i++) {
-            cars.race();
+            cars.race(outputContent);
             outputContent.printLine();
         }
 

@@ -1,27 +1,22 @@
 package racingcar;
 
-import java.util.List;
-
 public class Car {
-    private String name;
+    private static final int FORWARD_THRESHOLD = 3;
+    private final String name;
     private int step = 0;
 
     public Car(String name){
         this.name = name;
     }
 
-    public void move(Integer number){
-        if(number > 3){
+    public void move(int number){
+        if(number > FORWARD_THRESHOLD){
             step++;
         }
     }
 
-    public void print(){
-        System.out.print(name + " : ");
-        for(int i = 0; i < step; i++){
-            System.out.print("-");
-        }
-        System.out.println();
+    public String getStatus(){
+        return name + " : " + "-".repeat(step);
     }
 
     public int getStep() {
