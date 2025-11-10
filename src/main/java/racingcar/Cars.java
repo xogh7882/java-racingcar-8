@@ -48,14 +48,14 @@ public class Cars {
         }
     }
 
-    public void printWinner(){
+    public List<String> getWinner(){
         List<String> winner = new ArrayList<>();
         for(Car car : cars){
             if(car.getStep() == winStep){
                 winner.add(car.getName());
             }
         }
-        System.out.println("최종 우승자 : " + String.join(", ", winner));
+        return winner;
     }
 
 }
